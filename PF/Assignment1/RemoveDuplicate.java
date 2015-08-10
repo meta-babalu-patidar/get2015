@@ -1,10 +1,15 @@
+/*************************
+	 * @author Babalu Patidar
+	 * Program to remove duplicate element from given array
+	 * removeDuplicate method take a array of element as input and return array after removing duplicate element
+	 ***********/
 import java.util.Arrays;
 
-
+//Starting of RemoveDuplicate class
 public class RemoveDuplicate {
 
 	
-	 int[] removeDuplicate(int input[])
+	 int[] removeDuplicate(int input[])  //removeDuplicate method take a array of element as input and return array after removing duplicate element
 	 {  
 			int[]out=new int[100];
 			int j=0,p=0;
@@ -37,12 +42,9 @@ public class RemoveDuplicate {
 		 
 		 
 		 
-	 }
+	 } //End of removeduplicate method
 	 
-	 public static  void main(String args[])
-	 {
-		 
-	 }
+	
 	 
 
-}
+}//Ending of RemoveDuplicate class
