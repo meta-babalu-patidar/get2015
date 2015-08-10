@@ -1,9 +1,14 @@
+/*************************
+	 * @author Babalu Patidar
+	 * Program to check whether array is ascending descending  or un sorted
+	 * check method take an array as input and return 1 for ascending 2 for descending 0 for unsorted
+	 ***********/
 import java.util.Arrays;
 
-
+//start of SortCheck class
 public class SortCheck {
 	
-	public int check(int n[])
+	public int check(int n[]) //check method take an array as input and return 1 for ascending 2 for descending 0 for unsorted
 	{
 		
 		
@@ -36,6 +41,6 @@ public class SortCheck {
 		
 	return out;
 
-}
-}
+}// End of method
+}// End of class
 
