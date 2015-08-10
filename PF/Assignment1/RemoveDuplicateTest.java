@@ -1,3 +1,9 @@
+/*************************
+	 * @author Babalu Patidar
+	 * Program to test remove duplicate element from given array
+	
+	 ***********/
+	 
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -25,7 +31,7 @@ public class RemoveDuplicateTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test //test for removeduplicate method
 	public void test() {
 		int input[]={2,5,4,6,3,8,5,9,3,3,6,3,9,0};
 		int out1[]={2,5,4,6,3,8,9,0};
