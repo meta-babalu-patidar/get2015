@@ -1,4 +1,9 @@
-import static org.junit.Assert.*;
+/*****************************
+ * @author Babalu Patidar
+ * Program to testcase for convert binary number to octal number 
+ *convertBinaryToOctal method return octal number of binary n
+ */
+ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -25,7 +30,7 @@ public class BinaryToOctalTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test //it test binary to octal method
 	public void test() {
 		
 		BinaryToOctal b=new BinaryToOctal();
