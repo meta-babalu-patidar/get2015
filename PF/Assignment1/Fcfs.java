@@ -1,6 +1,16 @@
-public class Fcfs {
-	 int[][] FCFS( int at [], int job_size[] ,int n)
+/*****************************
+ * @author Babalu Patidar
+ * Program to perform fcfs process 
+ *FCFS method is used to generate 2d array having job, arrived time,waiting time,start,finished time for each job 
+ * input  value are Arrival_time and Job_size array 
+ */
+ 
+ 
+ /*Starting of class*/
+ public class Fcfs {
+	 int[][] FCFS( int at [], int job_size[]) //FCFS method  at[] is arrival time array and job_size is size array return value is 2d array
 	 {
+	 	int n=at.length;
 		 int i;
 		 int []jobST=new int[n];
 		 int []jobwt=new int[n];
@@ -49,7 +59,7 @@ public class Fcfs {
 		 System.out.println();
 		 }
 		 return job;
-	 }
+	 }// End of method
 	
 
-}
+}//End of Fcfs class
