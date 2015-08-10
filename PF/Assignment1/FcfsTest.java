@@ -1,4 +1,9 @@
-import static org.junit.Assert.*;
+/*****************************
+ * @author Babalu Patidar
+ * Program to Testcase of perform fcfs process 
+ */
+ 
+ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -31,7 +36,7 @@ public class FcfsTest {
 	public void tearDown() throws Exception {
 	}
 	
-	 int isArrayEqual(int exp[][], int output[][])
+	 int isArrayEqual(int exp[][], int output[][]) //method will calculate matched element and return as count
 	 {
 		 int i,j,count=0;
 		 for(i=0;i<exp.length;i++)
@@ -47,8 +52,10 @@ public class FcfsTest {
 			 }
 		 }
 		 return count;
-	 }
-	@Test
+	 } //End of method
+	 
+	 
+	@Test //test is to check FCFS method
 	public void test() {
 		
 		int out[][]=b.FCFS(a, execution, 4);
