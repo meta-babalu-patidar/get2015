@@ -1,6 +1,13 @@
-
+/*****************************
+ * @author Babalu Patidar
+ * Program to convert binary number to octal number 
+ *convertBinaryToOctal method return octal number of binary n
+ */
+ 
+ /* Starting of binarytooctal class*/
 public class BinaryToOctal {
-	
+
+/* starting of convertBinaryToOctal method where n is binary number and return value is octal */	
 	public int convertBinaryToOctal(int n)
 	{
 		
@@ -32,8 +39,8 @@ public class BinaryToOctal {
 		
 		
 		
-	}
+	}//End of method
 	
 
 
-}
+} /* Ending of binarytooctal class*/
