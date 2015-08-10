@@ -58,7 +58,7 @@ public class FcfsTest {
 	@Test //test is to check FCFS method
 	public void test() {
 		
-		int out[][]=b.FCFS(a, execution, 4);
+		int out[][]=b.FCFS(a, execution);
 		  assertEquals(20,isArrayEqual(exp,out));
 	}
 
