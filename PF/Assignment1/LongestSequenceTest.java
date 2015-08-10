@@ -1,3 +1,8 @@
+/*************************
+	 * @author Babalu Patidar
+	 * Program to Test Find longestSequnce 
+	 
+	 ***********/
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
@@ -27,7 +32,7 @@ public class LongestSequenceTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test  //Test for longest method
 	public void test() {
 		LongestSequence sc =new LongestSequence();
 		int[] a = { 1, 2, 3,2,3,4,5,3,4,2,2,3,4,5,6,7,8,1,2,4,5,6,7,8,9};
