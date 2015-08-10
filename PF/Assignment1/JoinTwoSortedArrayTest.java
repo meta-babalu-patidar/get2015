@@ -1,3 +1,8 @@
+/*************************
+	 * @author Babalu Patidar
+	 * Program to test Join two sorted Array
+	 * Join method takes two sorted array and size as input and return one joined sorted arrray
+	 ***********/
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -25,7 +30,7 @@ public class JoinTwoSortedArrayTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	@Test //Test for join method
 	public void test() {
 		int a[]={1,3,4,7,9,11},as=6;
 		int b[]={2,4,6,8},bs=4;
