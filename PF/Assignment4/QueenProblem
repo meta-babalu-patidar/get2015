@@ -1,0 +1,143 @@
+/****************************************************************************************
+Name            : QueenProblem
+Revision Log    : 2015-08-12: Babalu patidar : created.
+                : 
+                : 
+Use             : This class is used to solve queens problem 
+                :
+****************************************************************************************/
+import java.util.*;	
+
+
+public class QueenProblem 
+{
+
+	
+	static int[] check;					
+	int resultArray[][];				
+	
+	// constructor of class for object creation with parameter noOfQueens
+	// @param Integer:numOfQueens specify total no of queens is being placed
+	public QueenProblem(int numOfQueens) 
+	{
+        check = new int[numOfQueens];		
+    }
+
+	// printQueens method print the queens in respective places 
+	// It takes input as an 2d array
+	// tempResult stores the 2D array for representation of queens
+	public int[][] printQueens(int[] itemArray) 
+	{
+        int noOfQueens = itemArray.length;
+        int tempResult[][]= new int[noOfQueens][noOfQueens]; 
+        for (int i = 0; i < noOfQueens; i++) {
+            for (int j = 0; j < noOfQueens; j++) {
+                if (itemArray[i] == j) {
+                   System.out.print(" 1 ");
+                    tempResult[i][j]='1';
+                } else 
+                {
+                    System.out.print(" 0 ");
+                    tempResult[i][j]='0';
+                }
+            }
+            System.out.println();
+        }
+      System.out.println();
+       return tempResult;		
+	}
+	//End of printQueens method
+	
+	// canPlaceQueen method checks that any queen can be placed on a particular position or not 
+	//int row contain row number
+	//int column contain column number 
+	public boolean canPlaceQueen(int row, int column) 
+	{
+        for (int i = 0; i < row; i++) {
+            if (check[i] == column || (i - row) == (check[i] - column) ||(i - row) == (column - check[i])) 
+            {
+                return false;			
+            }
+        }
+        return true;		
+	}
+	//End  of printQueens method
+	
+	
+	// placeNqueens method places the queens in proper row and column after checking 
+	//Using backtracking this method prints all possible placements of
+	public int[][] placeNqueens(int row, int noOfQueens) 
+	{
+		for (int count = 0; count < noOfQueens; count++) 
+        {
+            if (canPlaceQueen(row, count)) 
+            {
+                check[row] = count;
+                if (row == noOfQueens - 1) 
+                {
+                    resultArray=printQueens(check);
+                    return resultArray;
+               } 
+                else 
+                {
+                    placeNqueens(row + 1, noOfQueens);
+                }
+            }
+        }
+        return resultArray;
+    }
+	//End of placeNqueens method
+	
+    //callplaceNqueens method is used for calling to placeNqueens
+	//It return an 2D array that contain proper position of queens.
+	public int[][] callplaceNqueens() {
+    	resultArray=placeNqueens(0, check.length);
+        return resultArray;		
+        	
+    }
+    
+	//Start of main method
+	//@param Integer:noOfQueens specify for no of total queens
+	public static void main(String[] args) 
+	{
+		int noOfQueens;
+		try{
+			System.out.println("Enter queens");
+	    	Scanner scan=new Scanner(System.in);							
+	    	noOfQueens=scan.nextInt();		
+	        
+	        if(noOfQueens==4)
+	        {
+	        	QueenProblem queenObject = new QueenProblem(noOfQueens);
+		        queenObject.callplaceNqueens();
+	        }
+	        else if(noOfQueens>4)
+	        { int k=noOfQueens;
+	        	while(k>4){
+	        		k=k/2;
+	        	}
+	        	if(k==4){
+	        		QueenProblem queenObject = new QueenProblem(noOfQueens);
+	    	        queenObject.callplaceNqueens();
+	        	}
+	        	else{
+	        		System.out.println("Queens Can Not Be Placed For This Number");
+	        	}
+	        }
+	        else{
+        		System.out.println("Queens Can Not Be Placed For This Number");
+        	}
+	        scan.close();  	
+		}
+		//End of try
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		//End of catch
+     						
+	}
+	//End of main method
+	
+	
+}
