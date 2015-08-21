@@ -55,9 +55,8 @@ public class UpdateTrainList {
 	//@param fileName contains Address of file
 	//@param lineNUm Contain line number of remove line
 	void updateTrainList(String currentLine[], int seat,String fileName,int lineNum) throws IOException{
-		
-		 int updatedSeats= Integer.parseInt(currentLine[4].trim())-seat;
-		 String updatedTrain=currentLine[0]+","+currentLine[1]+","+currentLine[2]+","+currentLine[3]+","+Integer.toString(updatedSeats)+","+currentLine[5]+","+currentLine[6];
+		int updatedSeats= Integer.parseInt(currentLine[4].trim())-seat;
+		String updatedTrain=currentLine[0]+","+currentLine[1]+","+currentLine[2]+","+currentLine[3]+","+Integer.toString(updatedSeats)+","+currentLine[5]+","+currentLine[6];
 		updateLine(fileName,lineNum,updatedTrain);
 		
 	}
