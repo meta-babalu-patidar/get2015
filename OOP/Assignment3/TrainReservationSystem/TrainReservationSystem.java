@@ -7,11 +7,33 @@ Use             : This class is used implement train reservation system.
 ****************************************************************************************/
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 
 public class TrainReservationSystem {
+	
+	static String trainType="";
+	static String trainno = null;
+	static int amount =999;
+	static String from;
+	static int flag=1;
+	static String to;
+	static String passcsvFile ="C:/Users/Babalu/workspace/OOP3/src/passangerInput.txt";
+	static String goodscsvFile="C:/Users/Babalu/workspace/OOP3/src/goodsInput.txt";
+	static String csvFile="";
+	static BufferedReader br = null;
+	static String line = "";
+	static String cvsSplitBy = ",";
+	static int count=0;
+	static Scanner scan=new Scanner(System.in);
+	static HashMap<String, String[]> hash = new HashMap<String, String[]>();
+	static String hashKey="";
+	static HashMap<String, String[]> hashtrain=new HashMap<String, String[]>();
+	static String hashtrainKey="";
+	
+	
 	//Start of main method
 	//@param trainType :specify type of train
 	//@param train no. :specify Number of train
@@ -19,24 +41,7 @@ public class TrainReservationSystem {
 	//@param to :specify destination station
 	public static void main(String arg[]){
 		
-		String trainType="";
-		String trainno = null;
-		int amount =999;
-		String from;
-		int flag=1;
-		String to;
-		String passcsvFile ="C:/Users/Babalu/workspace/OOP3/src/passangerInput.txt";
-		String goodscsvFile="C:/Users/Babalu/workspace/OOP3/src/goodsInput.txt";
-		String csvFile="";
-		BufferedReader br = null;
-		String line = "";
-		String cvsSplitBy = ",";
-		int count=0;
-		Scanner scan=new Scanner(System.in);
-		HashMap<String, String[]> hash = new HashMap<String, String[]>();
-		String hashKey="";
-		HashMap<String, String[]> hashtrain=new HashMap<String, String[]>();
-		String hashtrainKey="";
+
 		while(flag==1)
 		{ 
 			flag=0;
@@ -47,19 +52,7 @@ public class TrainReservationSystem {
 			if(trainType.equalsIgnoreCase("p")||trainType.equalsIgnoreCase("g")){
 				csvFile=trainType.equalsIgnoreCase("p") ? passcsvFile :goodscsvFile;
 				try {
-					br = new BufferedReader(new FileReader(csvFile));
-					//While loop read file.
-					while ((line = br.readLine()) != null) {
-						String[] trainsInfo = line.split(cvsSplitBy);
-						if(count==0||Integer.parseInt(trainsInfo[4])>0){
-							count++;
-							System.out.println(" "+ trainsInfo[0]+ "\t" + trainsInfo[1] + " \t"+trainsInfo[2] + " \t"+trainsInfo[3]+" \t" +trainsInfo[4]+" \t" +trainsInfo[5]+" \t" +trainsInfo[6]);
-							hashKey=trainsInfo[2].trim()+ "-"+trainsInfo[3].trim();
-							hash.put(hashKey,trainsInfo);
-							hashtrainKey=trainsInfo[1].trim();
-							hashtrain.put(hashtrainKey,trainsInfo);
-						}
-					}
+					new TrainReservationSystem().printChart();
 					System.out.print("Enter From : ");
 					from=scan.next(); 
 					System.out.print("Enter To : ");
@@ -68,40 +61,14 @@ public class TrainReservationSystem {
 					hashKey=from.trim()+"-"+to.trim();
 					if(hash.containsKey(hashKey)==true)
 					{
-						String out[]=hash.get(hashKey);
-						System.out.println(" \t" + out[1] + " \t"+out[2] + " \t"+out[3]+" \t" +out[4]+" \t" +out[5]+" \t" +out[6]);
-						System.out.print("Enter Train Number : ");
-						try{
-							trainno=scan.next(); 
-							System.out.print("Enter Seat/Weight Required : ");
-							amount=scan.nextInt();
-						}
-						catch(Exception e){
-							System.out.println("Please Enter Integer value");
-						}
-						
-						hashtrainKey=trainno.trim();
-						//while loop find train that has train number as given
-						if(hashtrain.containsKey(hashtrainKey)){
 					
-							
-							String trains[] = hashtrain.get(hashtrainKey);
-							if(Integer.parseInt(trains[4].trim())>=amount){
-								new PaymentMode().makePaymentAndPrintTicket(trains[1], amount,trainType,Integer.parseInt(trains[6].trim()),scan);
-								new UpdateTrainList().updateTrainList(trains, amount, csvFile,Integer.parseInt(trains[0].trim()));
-							}
-							else{
-								System.out.println("Seat/Weight is not avialable");
-							}
-								
-						}
-						else {
-							System.out.println("You have enterd wrong Train number");
-						}
+					new TrainReservationSystem().printTrainListFromTO(hashKey);
 					}
 					else{
 						System.out.println("No train available ");
 					}
+					
+					
 				}
 				catch(Exception e)
 				{
@@ -126,9 +93,76 @@ public class TrainReservationSystem {
 			}
 		}
 		//End of while loop
-		scan.close();
-			
+		scan.close();		
 	}
 	//End of main method
+	
+	
+	
+	//printChart method print the chart according to entery
+	void printChart() throws NumberFormatException, IOException{
+		br = new BufferedReader(new FileReader(csvFile));
+		//While loop read file.
+		while ((line = br.readLine()) != null) {
+			String[] trainsInfo = line.split(cvsSplitBy);
+			if(count==0||Integer.parseInt(trainsInfo[4])>0){
+				count++;
+				System.out.println(" "+ trainsInfo[0]+ "\t" + trainsInfo[1] + " \t"+trainsInfo[2] + " \t"+trainsInfo[3]+" \t" +trainsInfo[4]+" \t" +trainsInfo[5]+" \t" +trainsInfo[6]);
+				hashKey=trainsInfo[2].trim()+ "-"+trainsInfo[3].trim();
+				hash.put(hashKey,trainsInfo);
+				hashtrainKey=trainsInfo[1].trim();
+				hashtrain.put(hashtrainKey,trainsInfo);
+			}
+		}
+	}
+	//End of PrintChart method
+	
+	
+	//PrintTrainListFromTo method print list of train according to key
+	void printTrainListFromTO(String hashKey2) throws NumberFormatException, IOException{
+		
+		
+			String out[]=hash.get(hashKey2);
+			System.out.println(" \t" + out[1] + " \t"+out[2] + " \t"+out[3]+" \t" +out[4]+" \t" +out[5]+" \t" +out[6]);
+			System.out.print("Enter Train Number : ");
+			try{
+				trainno=scan.next(); 
+				System.out.print("Enter Seat/Weight Required : ");
+				amount=Integer.parseInt(scan.next());
+			}
+			catch(Exception e){
+				System.out.println("Please Enter Integer value");
+				printTrainListFromTO(hashKey2);
+			}
+			
+			hashtrainKey=trainno.trim();
+			bookTicketOfTrain(hashtrainKey);
+			
+	}
+	//End of PrintTrainListFromTo method
+	
+	
+	
+	//bookTicketOfTrain Method is used for book ticket
+	void bookTicketOfTrain(String hashtrainKey) throws NumberFormatException, IOException{
+		
+		if(hashtrain.containsKey(hashtrainKey)){
+			String trains[] = hashtrain.get(hashtrainKey);
+			if(Integer.parseInt(trains[4].trim())>=amount){
+				new PaymentMode().makePaymentAndPrintTicket(trains[1], amount,trainType,Integer.parseInt(trains[6].trim()),scan);
+				new UpdateTrainList().updateTrainList(trains, amount, csvFile,Integer.parseInt(trains[0].trim()));
+			}
+			else{
+				System.out.println("Seat/Weight is not avialable");
+			}
+				
+		}
+		else {
+			System.out.println("You have enterd wrong Train number");
+		}
+	}
+	//End of bookTicketOfTrain method
+		
+	
 }
 //End of TrainReservationSystem class
