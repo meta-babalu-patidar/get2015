@@ -35,14 +35,13 @@ public class SortedLinkList {
 			switch(choice){
 			case 1:
 				System.out.println("Enter element");
-				//try{
+				try{
 					int element=Integer.parseInt(scan.next());
 					addElement(linkedlist, element,0);
-				//}
-				//catch (Exception e) {
-				//	System.out.println(e.getMessage());
-				//	System.out.println("Enter integer :");
-				//}
+				}
+				catch (Exception e) {
+					System.out.println("Enter integer :");
+				}
 				break;
 				
 			case 2:
