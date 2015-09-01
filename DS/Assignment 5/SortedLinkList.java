@@ -35,13 +35,14 @@ public class SortedLinkList {
 			switch(choice){
 			case 1:
 				System.out.println("Enter element");
-				try{
+				//try{
 					int element=Integer.parseInt(scan.next());
-					addElement(linkedlist, element);
-				}
-				catch (Exception e) {
-					System.out.println("Enter integer :");
-				}
+					addElement(linkedlist, element,0);
+				//}
+				//catch (Exception e) {
+				//	System.out.println(e.getMessage());
+				//	System.out.println("Enter integer :");
+				//}
 				break;
 				
 			case 2:
@@ -70,22 +71,22 @@ public class SortedLinkList {
 		
 	}
 	//ENd of displayMenu method
-	
 	//Start of addElement method
-	public static void addElement(LinkedList<Integer> linkedList,int data) {
-		
+	public static void addElement(LinkedList<Integer> linkedList,int data,int index) {
 		if(linkedList.isEmpty()==true){
 			linkedList.add(data);
 		}
-		else{
-		Iterator<Integer> ite=linkedList.iterator();
-		int count=0;
-		for(;count<linkedList.size();count++){
-			if(data<ite.next()){
-				break;
+		else if((int)linkedList.get(index) < data){
+			if(index+1<linkedList.size()){
+				addElement(linkedList,data,index+1);
+			}
+			else{
+				linkedList.add(index+1, data);
+				return;
 			}
 		}
-		linkedList.add(count, data);
+		else{
+			linkedList.add(index, data);
 		}
 	}
 	//End of addElement method
