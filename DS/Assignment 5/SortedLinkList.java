@@ -23,6 +23,7 @@ public class SortedLinkList {
 		LinkedList<Integer> linkedlist=new LinkedList<Integer>();
 		Scanner scan=new Scanner(System.in);
 		do{
+			//Calling of displayMenu
 			displayMenu();
 			try{
 				choice=Integer.parseInt(scan.next());
