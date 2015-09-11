@@ -1,4 +1,4 @@
--- 2015-09-08: Babalu patidar : created.
+-- 2015-09-08: Babalu patidar : created..
 -- run command for createLibraryInformationSystem.sql script
 source C:/users/babalu/documents/createLibraryInformationSystem.sql;
 
