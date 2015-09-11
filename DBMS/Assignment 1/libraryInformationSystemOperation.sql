@@ -1,18 +1,22 @@
 
+-- 2015-09-08: Babalu patidar : created.
 
+-- Change value of addressLine2 column of Members table with “Jaipur”.
 UPDATE Members SET addressline2 = "Jaipur";
 
 SELECT * FROM Members;
 
+-- Change value of addressLine1 column of Members table with value “EPIP, Sitapura” for the members belonging to category “F”.
 UPDATE Members SET addressline1 = "EPIP Sitapura" WHERE category = 'F';
 
 SELECT * FROM Members;
 
+-- Delete all the rows from Publishers table.
 DELETE FROM Publishers;
 
 SELECT * FROM Publishers;
 
-
+--  Insert the sample data back in Publishers table using substitution variables.
 set @Publication1 := "BPB Publications";
 set @Publication2 := "Rajasthan Books Publication";
 set @Publication3 := "Jain Publication";
@@ -42,6 +46,7 @@ INSERT INTO Titles(title_nm, subject_id, publisher_id) VALUES("Diffrentiation & 
 
 SELECT * FROM Titles;
 
+-- Delete those rows of Titles table belonging to Publisher with publisher_id = 1
 DELETE FROM Titles WHERE publisher_id = 1;
 
 SELECT * FROM Titles;
