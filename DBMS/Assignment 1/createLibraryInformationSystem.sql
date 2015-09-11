@@ -57,8 +57,7 @@ accession_no INT auto_increment PRIMARY KEY,
 title_id INT,
 purchase_dt DATE,
 price REAL,
-status INT
-CHECK (status = 0 OR status = 1),
+status INT,
 FOREIGN KEY (title_id) REFERENCES Titles(title_id) ON DELETE CASCADE
 );
 
@@ -90,7 +89,7 @@ SHOW TABLES;
 
 -- Alter definitions of following LIS tables to provide the default constraints
 
-ALTER TABLE `Book_issue` MODIFY COLUMN `issue_dt` TIMESTAMP NOT NULL DEFAULT NOW();
+ALTER TABLE Book_issue MODIFY COLUMN issue_dt TIMESTAMP NOT NULL DEFAULT NOW();
 DELIMITER ;;
 CREATE TRIGGER book_due_date BEFORE INSERT ON Book_issue FOR EACH ROW
 BEGIN
@@ -100,10 +99,9 @@ DELIMITER ;
 
 -- Remove Members table of the LIS database.
 DROP TRIGGER book_due_date;
-DROP TABLE Book_issue;
-DROP TABLE Book_return;
+SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE Members;
-
+SET FOREIGN_KEY_CHECKS=1;
 SHOW TABLES;
 
 -- Creating the members table again
@@ -115,32 +113,5 @@ addressline2 VARCHAR(100),
 category char(1)
 );
 
-CREATE TABLE Book_issue(
-issue_dt DATE,
-accession_no INT,
-member_id INT,
-due_dt DATE,
-PRIMARY KEY(issue_dt, accession_no, member_id),
-FOREIGN KEY (accession_no) REFERENCES Books(accession_no) ON DELETE CASCADE,
-FOREIGN KEY (member_id) REFERENCES Members(member_id) ON DELETE CASCADE
-);
-
-CREATE TABLE Book_return(
-return_dt DATE,
-accession_no INT,
-member_id INT,
-issue_dt DATE,
-PRIMARY KEY(return_dt, accession_no, member_id),
-FOREIGN KEY (accession_no) REFERENCES Books(accession_no) ON DELETE CASCADE,
-FOREIGN KEY (member_id) REFERENCES Members(member_id) ON DELETE CASCADE
-);
-
 SHOW TABLES;
 
-ALTER TABLE `Book_issue` MODIFY COLUMN `issue_dt` TIMESTAMP NOT NULL DEFAULT NOW();
-DELIMITER ;;
-CREATE TRIGGER book_due_date BEFORE INSERT ON Book_issue FOR EACH ROW
-BEGIN
-    SET NEW.due_dt = DATE_ADD(NOW(), INTERVAL 15 DAY);
-END;;
-DELIMITER ;
