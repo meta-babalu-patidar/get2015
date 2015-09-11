@@ -7,11 +7,12 @@
  
  USE ZipCodeInfo;
  
- 
+ -- Creating ZipCodeNumber table
  CREATE TABLE ZipCodeNumber(
  zipcode int PRIMARY KEY AUTO_INCREMENT
  );
   
+ -- Creating StateInfo table
  CREATE TABLE StateInfo
  (
  zipcode int UNIQUE,
@@ -20,6 +21,7 @@
  FOREIGN KEY (zipcode) REFERENCES zipcodeNumber(zipcode) 
  );
  
+-- Creating CityInfo table
  CREATE TABLE CityInfo
  (
  zipcode int UNIQUE,
@@ -28,7 +30,7 @@
  FOREIGN KEY (zipcode) REFERENCES StateInfo(zipcode) 
  );
  
- 
+ -- Inserting in ZipCodeNumber table
  INSERT INTO ZipcodeNumber(zipcode) VALUES (800001);
  INSERT INTO ZipcodeNumber(zipcode) VALUES (800002);
  INSERT INTO ZipcodeNumber(zipcode) VALUES (800003);
@@ -41,7 +43,7 @@
  
  SELECT * FROM ZipcodeNumber;
  
- 
+  -- Inserting in StateInfo table
  INSERT INTO StateInfo(zipcode,stateName) VALUES (800001,'Rajasthan');
  INSERT INTO StateInfo(zipcode,stateName) VALUES (800002,'Gujrat');
  INSERT INTO StateInfo(zipcode,stateName) VALUES (800003,'Bihar');
@@ -54,7 +56,7 @@
  
  SELECT * FROM StateInfo;
  
- 
+  -- Inserting in CityInfo table
  INSERT INTO CityInfo(zipcode,cityName) VALUES (800001,'Jaipur');
  INSERT INTO CityInfo(zipcode,cityName) VALUES (800005,'Alwar');
  INSERT INTO CityInfo(zipcode,cityName) VALUES (800006,'Udaipur');
