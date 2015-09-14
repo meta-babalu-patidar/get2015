@@ -96,7 +96,7 @@ SELECT * FROM Book_issue;
 -- Inserting in book_return table
 INSERT INTO Book_return(return_date, accession_number, member_id, issue_date) VALUES('2015-07-03',209,10003,'2015-06-08');
 INSERT INTO Book_return(return_date, accession_number, member_id, issue_date) VALUES('2015-07-03',210,10004,'2015-06-08');
-INSERT INTO Book_return(accession_number, member_id, issue_date) VALUES(211,10001,'2015-06-08');
+INSERT INTO Book_return(return_date, accession_number, member_id, issue_date) VALUES('2015-09-10',211,10001,'2015-06-08');
 INSERT INTO Book_return(accession_number, member_id, issue_date) VALUES(212,10002,'2015-06-08');
 INSERT INTO Book_return(accession_number, member_id, issue_date) VALUES(202,10002,'2015-09-10');
 INSERT INTO Book_return(accession_number, member_id, issue_date) VALUES(204,10005,'2015-09-10');
