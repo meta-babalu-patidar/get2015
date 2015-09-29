@@ -1,0 +1,36 @@
+
+
+
+.parent {
+		margin:100px;
+		height:200px;
+		padding-left:20px;
+		width:200px;
+		font-size:50px;
+		border:2px solid black;
+		border-bottom-style:solid;
+		background-color:#7FFFD4;
+}
+
+.scale:hover {
+	transform: scale(2,2);
+	-webkit-transform: scale(2,2);
+	transition-duration:5s;
+	-webkit-transition-duration:5s;
+	
+}
+	
+.rotate:hover {
+		transform:rotate(20deg);
+		-webkit-transform:rotate(20deg);
+		-webkit-transform: rotate(20deg);
+		transition-duration:5s;
+}
+
+.skew:hover {
+	transform: skew(30deg,30deg);
+	-webkit-transform: skew(30deg,30deg);
+	transition-duration:5s;
+	-webkit-transition-duration:5s;
+	
+}
