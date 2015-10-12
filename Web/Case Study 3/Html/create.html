@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Create New Car</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"></link>
+		<script type="text/javascript" src="../js/carDekho.js"></script>
+	</head>
+	<body>
+<div id="wrapper">
+		<header>
+			<h1>Car Dekho</h1>
+			<br>
+			<h3>Drive For Excellence</h3>
+		</header>
+		<nav class="nav1">
+		  <ul>
+			<li><a href="AdminHome.html">My Home</a></li>
+			<li class="active"><a href="#">Create</a></li>
+			<li><a href="searchAdmin.html">Search</a></li>
+			<li class="logout"><a href="index.html">Logout</a></li>
+		  </ul>
+		</nav>
+		<section class="section1">
+			<form action="#">
+				
+					<h2>Enter Car Details</h2>
+					<table>
+						<tr><td class="text">Name:</td>
+							<td><input type="text" required name="name" id="name" placeholder="Enter Your Name"  class="field" pattern="[a-zA-Z]{2,}[a-zA-Z ]{0,}"></td></tr>
+						<tr><td class="text">EngineIncc:</td>
+							<td><input type="text" required="required" id="engineincc" name="engineincc"  class="field" placeholder="Enter EngineInCC of Car"></td></tr>	
+						<tr><td class="text">FuelCapacity:</td>
+							<td><input type="text" required="required" id="fuelcapacity" name="fuelcapacity"  class="field" placeholder="Enter Fuel Capacity of Car"></td></tr>						
+						<tr><td class="text">Company Name:</td>
+							<td><input type="text" required="required" id="make" name="make"  class="field" placeholder="Enter Company Name of Car"></td></tr>					
+						<tr><td class="text">Milage:</td>
+							<td><input type="text" required="required" id="milage" name="milage"  class="field" placeholder="Enter Milage of Car"></td></tr>						
+						<tr><td class="text">Model:</td>
+							<td><input type="text" required="required" id="model" name="model"  class="field" placeholder="Enter Model Name of Car"></td></tr>						
+						<tr><td class="text">Price:</td>
+							<td><input type="text" required="required" id="price" name="price"  class="field" placeholder="Enter Price of Car"></td></tr>
+						<tr><td class="text">AC:</td>
+						<td class="text1"><input type="radio" required="required" id="ac" name="AC" value="yes"  class="radioField">YES
+								<input type="radio" required="required" id="ac1" name="AC" value="no"  class="radioField">NO</td></tr>
+						<tr><td class="text">Accessory Kit:</td>
+						<td class="text1"><input type="radio" required="required" id="accessoryKit" name="accessoryKit" value="yes"  class="radioField">YES
+								<input type="radio" required="required" id="accessoryKit1" name="accessoryKit" value="no"  class="radioField">NO</td></tr>
+						<tr><td class="text">Power Steering:</td>
+						<td class="text1"><input type="radio" required="required" id="powerSteering" name="powerSteering" value="yes"  class="radioField">YES
+								<input type="radio" required="required" id="powerSteering1" name="powersteering" value="no"  class="radioField">NO</td></tr>
+						<tr></tr>
+						<tr><td colspan="2" align="center"><input type="reset" name="reset" class="button">
+						<input type="submit" name="submit" class="button" onclick = "create()"></td>
+						
+						</tr>
+					</table>
+				
+			</form>
+		</section>
+		<footer>
+			<p> @Copyright  2015. All Rights Reserved. Designed By <b>Babalu Patidar</b> </p>
+		</footer>
+		</div>
+	</body>
+</html>
