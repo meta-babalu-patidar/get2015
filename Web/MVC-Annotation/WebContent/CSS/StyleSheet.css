@@ -1,0 +1,180 @@
+
+#wrapper {
+	width : 95%;
+	height : 700px;
+	background : white;
+	margin: 0 auto;
+	margin-top : 30px;
+	height : 1100px;
+}
+
+#header{
+	height : 120px;
+	background-color : #AED1ED;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	text-align : center;
+	padding-top : 10px;
+}
+
+#navigation {
+	background-color : lightgrey;
+	padding:1px;
+	align:center;
+	text-align:left;
+}
+
+
+#navigation ul {
+	list-style-type : none;
+	padding-left: 5px;
+}
+
+#navigation ul li{
+	display : inline;
+	border:0px solid #f00;
+	margin : 0, 10px;
+	padding-right : 10px;
+}
+
+#navigation ul li a {
+	text-decoration : none;
+	color : black;
+}
+
+#navigation ul li a:hover {
+	color: black;
+	text-decoration : underline;
+}
+
+#navigation .active a{
+    background-color :  #AED1ED;
+	border : 1px solid black;
+}
+
+#navigation0 {
+	height : 50px;
+	background-color : #AED1ED;
+	text-align : center;
+	padding-top : 10px;
+}
+
+#container {
+	background:white;
+	min-height:700px;
+	padding:20px;
+	border:1px solid black;
+	background-color: #e6e6e6;
+	
+}
+
+#container form{
+	margin:100px;
+	margin-left:300px;
+	padding:100px;
+	width:600px;
+	float:center;
+	background-color:#00FFFF;
+	border:1px solid black;
+}
+
+#container table{
+	
+	border:1px solid black;
+
+}
+#container tr{
+	margin:10px;
+	border:1px solid black;
+
+}
+#container  td{
+	padding:10px;
+	border:1px solid black;
+
+}
+#container  th{
+	padding:5px;
+	border:1px solid black;
+
+}
+#container1 {
+	background:white;
+	min-width:700px;
+	min-height:700px;
+	padding:20px;
+	border:1px solid black;
+	background-color: #e6e6e6;
+	
+}
+#container1 form{
+	margin:100px;
+	margin-left:200px;
+	padding-top:100px;
+	padding-bottom:100px;
+	padding-left:40px;
+	float:center;
+	background-color:#00FFFF;
+	border:1px solid black;
+}
+
+#container1 table{
+	
+	border:1px solid black;
+
+}
+
+#container1 tr{
+	margin:10px;
+	border:1px solid black;
+
+}
+
+#container1  td{
+	padding:10px;
+	border:1px solid black;
+
+}
+
+#container1  th{
+	padding:5px;
+	border:1px solid black;
+
+}
+
+.text{
+	
+	width:100%;
+	
+}
+
+ #footer {
+	 background-color :#AED1ED;
+	 width : 100%;
+	 height: 120px;
+	 text-align:center;
+	 padding-top : 40px;
+	 border-bottom-left-radius: 20px;
+	 border-bottom-right-radius: 20px;
+ }
+ 
+ 
+ #footer ul {
+	list-style-type :none;
+	margin:0;
+	padding:0px;
+ }
+ #footer ul li {
+	display : inline;
+	width : 300px;
+	padding-left : 0px;
+	padding-top : 5px;
+	padding-bottom : 5px;
+}
+
+#footer ul li a{
+	text-decoration : none;
+}
+#footer p {text-align:center;}
+
+
