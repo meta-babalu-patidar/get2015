@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config>
+<config >
 	<vehicle name="Car">
 		<createdby>Babalu Patidar</createdby>
 		<enginecc>500</enginecc>
@@ -25,4 +25,4 @@
 		<helmetprice>1000</helmetprice>
 		<selfstart>YES</selfstart>
 	</vehicle>
-</config>
+</config >
