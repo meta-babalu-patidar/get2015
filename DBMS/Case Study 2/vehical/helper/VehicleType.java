@@ -1,6 +1,6 @@
 /****************************************************************************************
 Name            : VehicleType
-Revision Log    : 2015-09-21: Babalu patidar : created.
+Revision Log    : 2015-09-21: Babalu patidar : created..
                 : 
                 : 
 Use             : This enum is used to Enum for Vehicle Type input.
