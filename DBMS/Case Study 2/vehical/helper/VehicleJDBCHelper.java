@@ -1,6 +1,6 @@
 /****************************************************************************************
 Name            : VehicleJDBCHelper
-Revision Log    : 2015-09-21: Babalu patidar : created.
+Revision Log    : 2015-09-21: Babalu patidar : created..
                 : 
                 : 
 Use             : This class is used to create a Vehicle object and add its attribute value.
