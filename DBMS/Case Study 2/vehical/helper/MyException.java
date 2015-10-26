@@ -1,6 +1,6 @@
 /****************************************************************************************
 Name            : MyException
-Revision Log    : 2015-09-21: Babalu patidar : created.
+Revision Log    : 2015-09-21: Babalu patidar : created..
                 : 
                 : 
 Use             : This class is used to handle all the eaception manually.
