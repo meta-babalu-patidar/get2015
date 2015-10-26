@@ -3,4 +3,4 @@
 	<driver>com.mysql.jdbc.Driver</driver>
 	<username>root</username>
 	<password>mysql</password>
-</connection>
+</connection >
