@@ -36,7 +36,7 @@ public class VehicleHelper {
 		// set the variables of car
 		java.util.Date today = new java.util.Date();
 		java.sql.Date date = new java.sql.Date(today.getTime());
-		vehicle.setCreated_By("Babalu Patidar");
+		vehicle.setCreated_By("Babalu");
 		vehicle.setCreated_Time(date);
 		vehicle.setEnginInCC(500);
 		vehicle.setFuelCapacity(50);
@@ -60,7 +60,7 @@ public class VehicleHelper {
 		// set the variables of Bike
 		java.util.Date today = new java.util.Date();
 		java.sql.Date date = new java.sql.Date(today.getTime());
-		vehicle.setCreated_By("Rohit");
+		vehicle.setCreated_By("Babalu");
 		vehicle.setCreated_Time(date);
 		vehicle.setEnginInCC(500);
 		vehicle.setFuelCapacity(50);
