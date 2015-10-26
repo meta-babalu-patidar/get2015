@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config >
 	<vehicle name="Car">
-		<createdby>Babalu Patidar</createdby>
+		<createdby>Babalu</createdby>
 		<enginecc>500</enginecc>
 		<fuelcapacity>50</fuelcapacity>
 		<make>Hyundai</make>
@@ -14,7 +14,7 @@
 		<powersteering>YES</powersteering>
 	</vehicle>
 	<vehicle name="Bike">
-		<createdby>Babalu Patidar</createdby>
+		<createdby>Babalu</createdby>
 		<enginecc>500</enginecc>
 		<fuelcapacity>50</fuelcapacity>
 		<make>TVS</make>
