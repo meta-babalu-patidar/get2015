@@ -1,0 +1,14 @@
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  
+  .carousel-indicators {
+  	top : 30px;
+  }
+  
+  .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  		top : 90%;
+  }
