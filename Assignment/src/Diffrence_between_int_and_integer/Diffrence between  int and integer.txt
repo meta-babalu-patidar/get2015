@@ -1,0 +1,23 @@
+
+/**
+ *@author:Babalu Patidar
+ **/
+ 
+	Diffrence between int and Integer
+
+
+     * Integer is object type and int is primitive datatype
+	 * Integer are allocated from the heap and  int are often allocated from the stack
+	 * Integer is mutable datatype but int is immutable  
+	 * Object are passed by reference but int are passed by value.
+		For Example :
+					Integer i = new Integer(25);
+					String s = i.toString();
+					
+					It stores 25 as string
+
+					int i = 25;
+					String s = i.toString();
+					
+					We cant convert because it gives compilation error..
+					
