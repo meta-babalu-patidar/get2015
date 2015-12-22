@@ -11,7 +11,7 @@ public class ImplementationOfCharAt {
 
 		StringOperation str = new StringOperation("babalu patidar");
 		try {
-			System.out.println(str.charAt(3));
+			System.out.println(str.charAt(23));
 		} catch (MetaException e) {
 			System.out.println(e.getMessage());
 		}

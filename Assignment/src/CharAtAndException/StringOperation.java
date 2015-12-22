@@ -16,17 +16,14 @@ public class StringOperation {
 	public char charAt(int index) throws MetaException{
 		char strArray[] = new char[stringInput.length()];
 		strArray = stringInput.toCharArray();
-		for (int i = 0; i <= index; i++) {
-			try{
-				if (index == i) {
-					return strArray[i];
-				}
-			}
-			catch(ArrayIndexOutOfBoundsException e) {
-				throw new MetaException("Array out of bound .Please enter correct index ");	
-			}
+		char result;
+		try{
+			result = strArray[index];
 		}
-		return 0;
+		catch(ArrayIndexOutOfBoundsException e) {
+			throw new MetaException("Array out of bound .Please enter correct index ");	
+		}
+		return result;
 	}
 	
 }
