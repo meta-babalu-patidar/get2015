@@ -38,8 +38,7 @@ public class StringStringBufferAndStringBuilder {
 		System.out.println("Address of " + inputBuilder + " = "
 				+ System.identityHashCode(inputBuilder));
 
-		// Performance of stringBuffer is slow but performance of stringBuilder
-		// is fast.
+		// Performance of stringBuffer is slow but performance of stringBuilder is fast.
 
 		long currentTimeBuffer = System.currentTimeMillis();
 		for (int i = 0; i < 1000000; i++) {

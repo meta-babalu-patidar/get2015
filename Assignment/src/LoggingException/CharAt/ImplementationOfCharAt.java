@@ -3,7 +3,7 @@
  * @author Babalu Patidar
  *
  */
-package CharAtAndException;
+package LoggingException.CharAt;
 
 public class ImplementationOfCharAt {
 
@@ -11,11 +11,10 @@ public class ImplementationOfCharAt {
 
 		StringOperation str = new StringOperation("babalu patidar");
 		try {
-			System.out.println(str.charAt(4));
+			System.out.println(str.charAt(23));
 		} catch (MetaException exception) {
 			System.out.println(exception.getMessage());
 		}
 	}	
 }
-
 
